@@ -25,7 +25,7 @@ set -xe
 OPENSTACK_HELM_BRANCH="${OPENSTACK_HELM_BRANCH:-master}"
 OPENSTACK_HELM_COMMIT="${OPENSTACK_HELM_COMMIT:-5cfa1501a2e4912860f5393e81e72f37688e919f}"
 OPENSTACK_HELM_INFRA_BRANCH="${OPENSTACK_HELM_BRANCH:-master}"
-OPENSTACK_HELM_INFRA_COMMIT="${OPENSTACK_HELM_INFRA_COMMIT:-b0c34c4468633af62e88a604d6e27c53343d4686}"
+OPENSTACK_HELM_INFRA_COMMIT="${OPENSTACK_HELM_INFRA_COMMIT:-923c2fb3ccafb98bce310e4ecc8df52d41f2a501}"
 
 
 # openstack-helm steps to execute
@@ -43,7 +43,7 @@ fi
 if [ ! -e ~/openstack-helm-infra ]
 then
   cd ~
-  git clone https://git.openstack.org/openstack/openstack-helm-infra.git -b "${OPENSTACK_HELM_INFRA_BRANCH}"
+  git clone https://github.com/devopsbrett/openstack-helm-infra.git -b "${OPENSTACK_HELM_INFRA_BRANCH}"
   if [ ! -z "${OPENSTACK_HELM_INFRA_COMMIT}" ]
   then
     cd openstack-helm-infra
@@ -54,7 +54,7 @@ fi
 if [ ! -e ~/openstack-helm ]
 then
   cd ~
-  git clone https://git.openstack.org/openstack/openstack-helm.git -b "${OPENSTACK_HELM_BRANCH}"
+  git clone https://github.com/devopsbrett/openstack-helm.git -b "${OPENSTACK_HELM_BRANCH}"
   if [ ! -z "${OPENSTACK_HELM_COMMIT}" ]
   then
     cd openstack-helm
